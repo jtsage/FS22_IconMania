@@ -1,0 +1,30 @@
+{
+  "name": "fs22-icon-mania",
+  "version": "0.0.90",
+  "description": "FS22 SVG Icons",
+  "main": "dist/fs22_icons.js",
+  "homepage": "https://github.com/jtsage/FS22_IconMania#readme",
+  "keywords": [],
+  "author": {
+    "name": "FSG Modding",
+    "email": "jtsage+datebox@gmail.com",
+    "url": "https://www.fsgmodding.com/"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtsage/FS22_IconMania/issues/"
+  },
+  "repository": "github:jtsage/FS22_IconMania",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "node ./test/test.js",
+    "depends": "node ./test/outdated-deps.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@babel/eslint-parser": "^7.23.3",
+    "ansi-colors": "^4.1.3",
+    "eslint-plugin-unicorn": "^50.0.1"
+  }
+}
