@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-		<link href="fsico.css" rel="stylesheet">
+		<link href="CSS/fsico.css" rel="stylesheet">
+		<script type="text/javascript" src="fillType.js"></script>
 		<style>
 			.h0 { font-size: 4rem; }
 		</style>
@@ -35,7 +36,21 @@
 				<pre>&lt;i class="fsico-icon-name">&lt;/i></pre>
 
 				<p>That's it.  Scale however you want.  Include the CSS file on your page.</p>
+
+				<p>You can also choose to use the fillTypes.js script - simply include in on your page, and then you can do:</p>
+
+				<pre>&lt;fillType name="filltype-here">&lt;/fillType></pre>
+
+				<p>Fill type names are normalized, and I have gone to great pains to guess as well as possible what you meant - spelling matters, capitalization does not.</p>
 			</div>
+			<div class="card mx-auto" style="width: 18rem;">
+				<div class="card-header">
+				  Featured Item
+				</div>
+				<div class="card-body">
+					<fillType name="Wheat"></fillType>Wheat and <fillType name="barley"></fillType>barley are two primary <fillType name="cereal"></fillType>cereal grains that have played pivotal roles in human agriculture for centuries. <fillType name="Wheat"></fillType>Wheat, known for its versatility, is a staple crop used in various forms, from <fillType name="bread"></fillType>bread and <fillType name="pasta"></fillType>pasta to <fillType="cereals"></fillType>cereals. It is valued for its high gluten content, which gives elasticity to dough. <fillType name="Barley"></fillType>Barley, on the other hand, is often used in brewing <fillType name="beer"></fillType>beer.
+				</div>
+			  </div>
 		</div>
 	</body>
 </html>
