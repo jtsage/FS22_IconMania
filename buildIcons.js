@@ -52,6 +52,7 @@ function makeBuildCommand() {
 			const fileList    = buildTools.getSVGInput(thisSVGPath)
 			const svgCSS      = []
 			const svgHTML     = []
+			const svgLIST     = []
 
 			if ( fileList.len === 0 ) {
 				program.outputHelp()
@@ -80,6 +81,7 @@ function makeBuildCommand() {
 					const svgWEB = buildTools.webSVG(thisFile, thisSVG)
 					svgCSS.push(svgWEB.css)
 					svgHTML.push(svgWEB.html)
+					svgLIST.push(svgWEB.name)
 				}
 			}
 			if ( options.atlas ) {
@@ -88,6 +90,7 @@ function makeBuildCommand() {
 			if ( options.css ) {
 				log(buildTools.writeWebSVG(svgCSS, svgHTML))
 			}
+			buildTools.copyAssets(svgLIST)
 		})
 	return build
 }
