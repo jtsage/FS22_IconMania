@@ -16,10 +16,8 @@
   },
   "repository": "github:jtsage/FS22_IconMania",
   "scripts": {
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "test": "node ./test/test.js",
-    "depends": "node ./test/outdated-deps.js"
+    "clean": "node ./buildIcons.js clean",
+    "dist": "node ./buildIcons.js"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
