@@ -38,16 +38,8 @@ function makeBuildCommand() {
 		.description('Build Icon Files')
 		.argument('[folder]',   'Source Files Folder')
 		.option('--no-svg',     'Do not write optimized SVG files')
-		.option('--atlas',      'Write PNG atlas files')
-		.option('--png',        'Write PNG files (required for atlas)')
 		.option('--no-css',     'Do not write CSS+SVG files')
 		.action((folder, options) => {
-			if ( options.atlas && !options.png ) {
-				program.outputHelp()
-				log(['error', 'To build an sprite atlas, PNG build must be on.'], true)
-				process.exit(1)
-			}
-			
 			const thisSVGPath = folder ?? path.join(__dirname, 'svg_original')
 			const fileList    = buildTools.getSVGInput(thisSVGPath)
 			const svgCSS      = []
@@ -61,8 +53,6 @@ function makeBuildCommand() {
 			}
 			
 			if ( options.svg )   { log(buildTools.prepDist('SVG')) }
-			if ( options.png )   { log(buildTools.prepDist('PNG')) }
-			if ( options.atlas ) { log(buildTools.prepDist('ATLAS')) }
 			if ( options.css )   { log(buildTools.prepDist('CSS')) }
 			
 			for ( const thisFile of fileList.list ) { //.slice(0, 2) ) {
@@ -72,10 +62,6 @@ function makeBuildCommand() {
 				log(thisSVGLoader.log)
 			
 				if ( thisSVG === null ) { continue }
-			
-				if ( options.png ) {
-					log(buildTools.writePNG(thisFile, thisSVG, fileList.len))
-				}
 				
 				if ( options.css ) {
 					const svgWEB = buildTools.webSVG(thisFile, thisSVG)
@@ -83,9 +69,6 @@ function makeBuildCommand() {
 					svgHTML.push(svgWEB.html)
 					svgLIST.push(svgWEB.name)
 				}
-			}
-			if ( options.atlas ) {
-				log(buildTools.writeATLAS())
 			}
 			if ( options.css ) {
 				log(buildTools.writeWebSVG(svgCSS, svgHTML))
