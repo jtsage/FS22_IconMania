@@ -9,9 +9,9 @@
 // fillType element replacer
 
 /* cSpell:disable */
-/* eslint-disable comma-spacing */
+/* eslint-disable comma-spacing, quotes */
 const ft_known = new Set(/***SVGSET***/)
-/* eslint-enable comma-spacing */
+/* eslint-enable comma-spacing, quotes */
 
 const ft_map = {
 	'barley-flour'                  : 'flour',
