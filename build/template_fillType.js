@@ -149,11 +149,13 @@ const ft_normalizeName = (name) => {
 	/* eslint-enable no-console */
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+const ft_doReplace = () => {
 	for ( const element of document.querySelectorAll('fillType') ) {
 		const thisName = ft_getAttrib(element, 'name')
 		const thisIcon = ft_normalizeName(thisName)
 		if ( thisIcon === null ) { continue }
 		element.innerHTML = `<i title="${thisIcon[1]}" class="fsico-${thisIcon[0]}"></i>`
 	}
-})
+}
+
+window.addEventListener('DOMContentLoaded', () => { ft_doReplace() })
