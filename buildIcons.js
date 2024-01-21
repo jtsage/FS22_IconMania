@@ -53,7 +53,10 @@ function makeBuildCommand() {
 			}
 			
 			if ( options.svg )   { log(buildTools.prepDist('SVG')) }
-			if ( options.css )   { log(buildTools.prepDist('CSS')) }
+			if ( options.css )   {
+				log(buildTools.prepDist('CSS'))
+				svgCSS.push(buildTools.webSVGHead())
+			}
 			
 			for ( const thisFile of fileList.list ) { //.slice(0, 2) ) {
 				const thisSVGLoader = buildTools.writeSVG(thisFile, options.svg, fileList.len)
