@@ -9,10 +9,12 @@
 // Main Entry Point for Build
 
 const path        = require('node:path')
+const fs          = require('node:fs')
 const buildTools  = require('./lib/buildTools.js')
 const log         = buildTools.cLog
 const { program } = require('commander')
 const packJSON    = require('./package.json')
+const { makeCSS } = require('svg2cssbg')
 
 program
 	.name('buildIcons')
@@ -37,46 +39,29 @@ function makeBuildCommand() {
 	build
 		.description('Build Icon Files')
 		.argument('[folder]',   'Source Files Folder')
-		.option('--no-svg',     'Do not write optimized SVG files')
-		.option('--no-css',     'Do not write CSS+SVG files')
-		.action((folder, options) => {
+		.action((folder) => {
 			const thisSVGPath = folder ?? path.join(__dirname, 'svg_original')
-			const fileList    = buildTools.getSVGInput(thisSVGPath)
-			const svgCSS      = []
-			const svgHTML     = []
-			const svgLIST     = []
+			try {
+				const results     = makeCSS(thisSVGPath, {
+					customHTML : buildTools.customHTML,
+					makeSampleSheet : true,
+					iconPrefix : 'fsico',
+				})
 
-			if ( fileList.len === 0 ) {
-				program.outputHelp()
-				log(['error', 'No files found'], true)
-				process.exit(1)
-			}
-			
-			if ( options.svg )   { log(buildTools.prepDist('SVG')) }
-			if ( options.css )   {
+				log(buildTools.prepDist('SVG'))
 				log(buildTools.prepDist('CSS'))
-				svgCSS.push(buildTools.webSVGHead())
-			}
-			
-			for ( const thisFile of fileList.list ) { //.slice(0, 2) ) {
-				const thisSVGLoader = buildTools.writeSVG(thisFile, options.svg, fileList.len)
-				const thisSVG       = thisSVGLoader.data
-			
-				log(thisSVGLoader.log)
-			
-				if ( thisSVG === null ) { continue }
-				
-				if ( options.css ) {
-					const svgWEB = buildTools.webSVG(thisFile, thisSVG)
-					svgCSS.push(svgWEB.css)
-					svgHTML.push(svgWEB.html)
-					svgLIST.push(svgWEB.name)
+
+				for ( const svgFile of results.svgCleanFiles ) {
+					fs.writeFileSync(buildTools.distPath('SVG', svgFile.filename), svgFile.data)
 				}
+
+				fs.writeFileSync(buildTools.distPath('CSS', 'fsico.css'), results.cssFile)
+				fs.writeFileSync(buildTools.distPath('CSS', 'sample-fsico.html'), results.htmlFile)
+
+				buildTools.copyAssets(results.iconList)
+			} catch (err) {
+				log(['error', err], true)
 			}
-			if ( options.css ) {
-				log(buildTools.writeWebSVG(svgCSS, svgHTML))
-			}
-			buildTools.copyAssets(svgLIST)
 		})
 	return build
 }
