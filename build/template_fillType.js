@@ -91,7 +91,6 @@ const ft_map = {
 	'soy-flour'                     : 'soyflour',
 	'soybeans'                      : 'soybean',
 	'soybeanstraw'                  : 'beanstraw',
-	'spaghetti'                     : 'pasta',
 	'square-bale-grass'             : 'squarebalegrass',
 	'square-bale-silage'            : 'squarebalesilage',
 	'square-bale-straw'             : 'squarebalestraw',
