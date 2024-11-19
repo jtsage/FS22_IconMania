@@ -55,7 +55,7 @@ function makeBuildCommand() {
 					fs.writeFileSync(buildTools.distPath('SVG', svgFile.filename), svgFile.data)
 				}
 
-				fs.writeFileSync(buildTools.distPath('CSS', 'fsico.css'), results.cssFile)
+				fs.writeFileSync(buildTools.distPath('CSS', 'fsico25.css'), results.cssFile)
 				fs.writeFileSync(buildTools.distPath('CSS', 'sample-fsico.html'), results.htmlFile)
 
 				buildTools.copyAssets(results.iconList)

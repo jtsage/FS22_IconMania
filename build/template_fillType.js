@@ -15,9 +15,8 @@ const ft_known = new Set(/***SVGSET***/)
 
 const ft_map = {
 	'barley-flour'                  : 'flour',
-	'beetroot'                      : 'redbeet',
-	'canola-oil'                    : 'oil-canola',
-	'canolaoil'                     : 'oil-canola',
+	'canola-oil'                    : 'oilcanola',
+	'canolaoil'                     : 'oilcanola',
 	'cardboard'                     : 'cartonroll',
 	'carton-roll'                   : 'cartonroll',
 	'cereal'                        : 'cereals',
@@ -29,8 +28,8 @@ const ft_map = {
 	'cottonsquarebale'              : 'squarebalecotton',
 	'digestate-raw-methane'         : 'methane',
 	'dry-maize2'                    : 'drymaize2',
-	'dryalfalfa'                    : 'dryalfalfa-windrow',
-	'dryclover'                     : 'dryclover-windrow',
+	'dryalfalfa'                    : 'dryalfalfawindrow',
+	'dryclover'                     : 'drycloverwindrow',
 	'eggs'                          : 'egg',
 	'empty-pallets'                 : 'emptypallet',
 	'fabric-cotton'                 : 'fabric',
@@ -40,14 +39,13 @@ const ft_map = {
 	'firtree'                       : 'wood',
 	'fish-feed'                     : 'fishfeed',
 	'fish-flour'                    : 'fishflour',
-	'foragemix'                     : 'forage-mixing',
 	'grape-juice'                   : 'grapejuice',
 	'grapes'                        : 'grape',
-	'grass-dryer'                   : 'drygrass-windrow',
+	'grass-dryer'                   : 'drygrasswindrow',
 	'grass-silage'                  : 'silage',
-	'grasscut'                      : 'grass-windrow',
+	'grasscut'                      : 'grasswindrow',
 	'gsi-corn-dryer'                : 'drymaize2',
-	'hay'                           : 'drygrass-windrow',
+	'hay'                           : 'drygrasswindrow',
 	'hay-pellets'                   : 'haypellets',
 	'hay-silage'                    : 'silage',
 	'herbizidproduktion'            : 'herbicide',
@@ -57,8 +55,8 @@ const ft_map = {
 	'mineral-feed'                  : 'mineralfeed',
 	'oat-flour'                     : 'flour',
 	'oilseedradish'                 : 'oilradish',
-	'olive-oil'                     : 'oil-olive',
-	'oliveoil'                      : 'oil-olive',
+	'olive-oil'                     : 'oilolive',
+	'oliveoil'                      : 'oilolive',
 	'olives'                        : 'olive',
 	'pallet-furniture'              : 'furniture',
 	'pallet-herbicide'              : 'herbicide',
@@ -110,10 +108,10 @@ const ft_map = {
 	'sugarbeet-cut'                 : 'sugarbeetcut',
 	'sugarbeetcut-in'               : 'sugarbeetcut',
 	'sugarcane-sugar'               : 'sugar',
-	'sunflower-oil'                 : 'oil-sunflower',
-	'sunfloweroil'                  : 'oil-sunflower',
+	'sunflower-oil'                 : 'oilsunflower',
+	'sunfloweroil'                  : 'oilsunflower',
 	'sunflowers'                    : 'sunflower',
-	'tmr-mixer'                     : 'forage-mixing',
+	'tmr-mixer'                     : 'foragemix',
 	'tomatoes'                      : 'tomato',
 	'tree-saplings'                 : 'wood',
 	'treesaplings'                  : 'wood',
@@ -145,6 +143,7 @@ const ft_normalizeName = (name) => {
 	sanitizedName = sanitizedName.replace(/^fill-/, '')
 	sanitizedName = sanitizedName.replace(/^silo-/, '')
 	sanitizedName = sanitizedName.replace(/^big-bag-/, '')
+	sanitizedName = sanitizedName.replaceAll('-', '')
 
 	if ( typeof ft_map[sanitizedName] !== 'undefined' ) {
 		sanitizedName = ft_map[sanitizedName]

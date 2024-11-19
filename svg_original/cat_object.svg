@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="uuid-2bbaa322-c060-4ec7-a9a8-2cd9c8aa9275" data-name="cat_object" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <path d="M17.67,32.02v95.53h95.53V32.02H17.67ZM108.85,123.2H22.02V36.37h86.83v86.83Z" style="fill: #2ac1ec; stroke-width: 0px;"/>
-  <path d="M42.52,36.71v86.16c0,.12-.01.23-.03.33h-4.29c-.01-.1-.03-.22-.03-.33V36.71c0-.12.01-.23.03-.33h4.29c.01.1.03.22.03.33Z" style="fill: #2ac1ec; stroke-width: 0px;"/>
-  <path d="M92.68,36.71v86.16c0,.12-.01.23-.03.33h-4.29c-.01-.1-.03-.22-.03-.33V36.71c0-.12.01-.23.03-.33h4.29c.01.1.03.22.03.33Z" style="fill: #2ac1ec; stroke-width: 0px;"/>
-  <rect x="42.52" y="102.23" width="45.81" height="4.35" style="fill: #2ac1ec; stroke-width: 0px;"/>
-  <rect x="54.73" y="57.2" width="4.35" height="45.04" style="fill: #2ac1ec; stroke-width: 0px;"/>
-  <rect x="71.78" y="57.2" width="4.35" height="45.04" style="fill: #2ac1ec; stroke-width: 0px;"/>
-  <rect x="42.52" y="52.85" width="45.81" height="4.35" style="fill: #2ac1ec; stroke-width: 0px;"/>
-  <path d="M17.25,33.75l-2.44-23.37L109.81.45l2.44,23.37-95.01,9.93ZM19.58,14.26l1.54,14.72,86.36-9.03-1.54-14.72L19.58,14.26Z" style="fill: #2ac1ec; stroke-width: 0px;"/>
+<svg id="uuid-d04bb184-086f-4436-bcdd-490e6ea94b6f" data-name="cat_object" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <path d="M17.67,32.02v95.53h95.53V32.02H17.67ZM108.85,123.2H22.02V36.37h86.83v86.83Z" style="fill: #2ac1ec;"/>
+  <path d="M42.52,36.71v86.16c0,.12-.01.23-.03.33h-4.29c-.01-.1-.03-.22-.03-.33V36.71c0-.12.01-.23.03-.33h4.29c.01.1.03.22.03.33Z" style="fill: #2ac1ec;"/>
+  <path d="M92.68,36.71v86.16c0,.12-.01.23-.03.33h-4.29c-.01-.1-.03-.22-.03-.33V36.71c0-.12.01-.23.03-.33h4.29c.01.1.03.22.03.33Z" style="fill: #2ac1ec;"/>
+  <rect x="42.52" y="102.23" width="45.81" height="4.35" style="fill: #2ac1ec;"/>
+  <rect x="54.73" y="57.2" width="4.35" height="45.04" style="fill: #2ac1ec;"/>
+  <rect x="71.78" y="57.2" width="4.35" height="45.04" style="fill: #2ac1ec;"/>
+  <rect x="42.52" y="52.85" width="45.81" height="4.35" style="fill: #2ac1ec;"/>
+  <path d="M17.25,33.75l-2.44-23.37L109.81.45l2.44,23.37-95.01,9.93ZM19.58,14.26l1.54,14.72,86.36-9.03-1.54-14.72L19.58,14.26Z" style="fill: #2ac1ec;"/>
 </svg>
