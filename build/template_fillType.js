@@ -16,6 +16,7 @@ const ft_known = new Set(/***SVGSET***/)
 const ft_map = {
 	'barleyflour'                   : 'flour',
 	'beanstraw'                     : 'soybeancut',
+	'beetroot'                      : 'redbeet',
 	'canolaoil'                     : 'oilcanola',
 	'cardboard'                     : 'cartonroll',
 	'carton-roll'                   : 'cartonroll',

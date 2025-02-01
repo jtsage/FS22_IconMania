@@ -16,6 +16,7 @@ const ft_known = new Set(["cat-attach-has","cat-attach-need","cat-brand","cat-ob
 const ft_map = {
 	'barleyflour'                   : 'flour',
 	'beanstraw'                     : 'soybeancut',
+	'beetroot'                      : 'redbeet',
 	'canolaoil'                     : 'oilcanola',
 	'cardboard'                     : 'cartonroll',
 	'carton-roll'                   : 'cartonroll',
